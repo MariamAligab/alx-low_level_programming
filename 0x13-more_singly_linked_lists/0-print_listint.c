@@ -1,19 +1,25 @@
+#include <stdio.h>
 #include "lists.h"
 
 /**
- * print_listint - Entry point.
- * @h:value.
- * Return: Always 0 (Success)
- */
+  * print_listint - Prints all the elements of a linked list
+  * @h: The head of the linked list
+  *
+  * Return: The number of nodes of the linked list
+  */
 size_t print_listint(const listint_t *h)
 {
-	int node = 0;
+	int count = 0;
 
-	while (h != NULL)
+	if (h != NULL)
 	{
-		printf("%d\n", h->n);
-		h = h->next;
-		node++;
+		while (h)
+		{
+			printf("%d\n", h->n);
+			h = h->next;
+			count++;
+		}
 	}
-	return (node);
+
+	return (count);
 }
